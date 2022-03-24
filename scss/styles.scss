@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap");
+
+@import '__reset';
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+body {
+  color: #fff;
+  background: #36c;
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.modal-open {
+  overflow: hidden;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 560px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 20px 0;
+  line-height: 1.4;
+}
+@media only screen and (max-width: 560px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 40px 0 0 0;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 560px) {
+  h3 {
+    font-size: 1rem;
+  }
+}
+h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 20px 0;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 560px) {
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+span,
+a,
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 400px) {
+  span,
+  a,
+  p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+p {
+  padding: 10px 0;
+}
+ul,
+ol {
+  padding: 10px 0 10px 20px;
+}
+ul li,
+ol li {
+  font-size: 1rem;
+  list-style-type: disc;
+  padding: 3px 0;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 400px) {
+  ul li,
+  ol li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+iframe {
+  display: block;
+}
+hr {
+  margin: 20px auto 20px auto;
+  width: 80px;
+}
+hr.dec {
+  border: 1px solid #fff;
+}
+
+#contact__section {
+  margin: 130px 0;
+  text-align: center;
+  background: #36c;
+  color: #fff;
+  width: 100%;
+}
+
+form {
+  margin: 0 0 50px 0;
+}
+
+input[type="checkbox"]#reg {
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  font-size: 1px;
+  width: 0;
+  height: 0;
+}
+input[type="checkbox"]#agree {
+  display: none;
+}
+input[type="checkbox"] + label:before {
+  content: "☐";
+  font-size: 30px;
+}
+input[type="checkbox"]:checked + label:before {
+  content: "☑";
+  text-decoration: none;
+}
+
+button,
+input,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  width: auto;
+  height: auto;
+  padding: 10px 30px;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  margin: 30px 0;
+}
+@media only screen and (max-width: 600px) {
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    margin: 20px 10px;
+  }
+}
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background: #fff;
+  color: #36c;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input[type=file]::file-selector-button {
+  margin: 20px 20px 20px 0;
+  border: 1px solid #36c;
+  padding: 1em 1em;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+
+input[type=file]::file-selector-button:hover {
+  background-color: #36c;
+  border: 1px solid #fff;
+  color:#fff;
+}
+
+#file-upload-button span {
+  margin-left: 20px!important;
+}
