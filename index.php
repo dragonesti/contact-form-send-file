@@ -1,5 +1,14 @@
 <?php
-    require_once('inc/upload_file.php');
+require ('inc/FormValidator.php');
+if (isset($_POST['submit'])) {
+//    $validation = new UserValidator($_POST);
+//    $errors = $validation->validateForm();
+
+//    if (empty($errors)) {
+//        echo 'Form validation is ok, Next step is doing something with form data';
+//    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,14 +24,14 @@
         <h1 class="contact__form--header">Send file form</h1>
         <hr class="dec">
         <span class="msh">
-            <?php
-                if (isset($message)) {
-                    echo $message;
-                }
-            ?>
+<!--            --><?php
+//                if (isset($message)) {
+//                    echo $message;
+//                }
+//            ?>
         </span>
         <hr class="dec">
-        <form id="data" method="post" enctype="multipart/form-data" action="">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" action="">
             <input name="text" type="name" id="name" placeholder="Write your name"/>
             <br><input name="file" type="file" id="file"/>
             <br><button name="send">Send </button>
