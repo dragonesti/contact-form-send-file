@@ -1,16 +1,21 @@
 <?php
 require ('inc/FormValidator.php');
+
 if (isset($_POST['submit'])) {
     $validation = new FormValidator($_POST, $_FILES);
     $errors = $validation->validateForm();
 
     if (empty($errors)) {
         echo 'Form validation is ok, Next step is doing something with form data';
-    }
 
-//    echo '<pre>';
-//    var_dump($_FILES['file']);
-//    echo '</pre>';
+
+    echo '<pre>';
+    var_dump($_FILES['file']);
+    echo '</pre>';
+	    require ('inc/SendForm.php');
+    $sendform = new SendForm($_POST, $_FILES, 'mov@mov.pl');
+	$errors = $sendform->sendmail();
+    }
 }
 
 ?>
@@ -32,6 +37,10 @@ if (isset($_POST['submit'])) {
                 if (isset($errors)) {
                     print_r ($errors);
                 }
+                echo '<br>';
+//                if (isset($errors_sendmail)) {
+//                    print_r ($errors_sendmail);
+//                }
             ?>
         </span>
         <hr class="dec">
