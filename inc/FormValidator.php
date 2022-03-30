@@ -38,7 +38,7 @@ class FormValidator
         if (empty($val)) {
             $this->addErrors('username', 'username cannot be empty');
         } else {
-            if (!preg_match('/^[a-zA-Z0-9]{6,12}$/', $val)) {
+            if (!preg_match('/^[a-zA-Z0-9]{3,12}$/', $val)) {
                 $this->addErrors('username', 'username must be 6-12 char & alphanumeric ');
             }
         }

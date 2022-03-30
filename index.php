@@ -1,20 +1,16 @@
 <?php
 require ('inc/FormValidator.php');
-
+require ('inc/SendForm.php');
 if (isset($_POST['submit'])) {
     $validation = new FormValidator($_POST, $_FILES);
     $errors = $validation->validateForm();
-
     if (empty($errors)) {
-        echo 'Form validation is ok, Next step is doing something with form data';
-
-
-    echo '<pre>';
-    var_dump($_FILES['file']);
-    echo '</pre>';
-	    require ('inc/SendForm.php');
-    $sendform = new SendForm($_POST, $_FILES, 'mov@mov.pl');
-	$errors = $sendform->sendmail();
+	    $sendform = new SendForm( $_POST, $_FILES, 'mov@mov.pl' );
+	    $errors   = $sendform->sendmail();
+	    if ( ( $errors['mail'] = 'mail send ... OK' ) ) {
+		    unset( $_FILES );
+		    unset( $_POST );
+	    }
     }
 }
 
