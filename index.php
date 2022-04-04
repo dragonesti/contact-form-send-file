@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $validation = new FormValidator($_POST, $_FILES);
     $errors = $validation->validateForm();
     if (empty($errors)) {
-	    $sendform = new SendForm( $_POST, $_FILES, 'mov@mov.pl' );
+	    $sendform = new SendForm( $_POST, $_FILES, 'your@mail.com' );
 	    $errors   = $sendform->sendmail();
 	    if ( ( $errors['mail'] = 'mail send ... OK' ) ) {
 		    unset( $_FILES );
